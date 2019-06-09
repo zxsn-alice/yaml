@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: helpcenterapi
+  namespace: netcore
+spec:
+  type: NodePort
+  ports:
+    - port: 13100
+      targetPort: 13100
+  selector:
+    name: helpcenterapi

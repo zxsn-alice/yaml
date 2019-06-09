@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpcenterapi
+  namespace: netcore
+  labels:
+    name: helpcenterapi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: helpcenterapi
+  template:
+    metadata:
+      labels:
+        name: helpcenterapi
+    spec:
+      containers:
+      - name: helpcenterapi
+        image: helpcenterapi:latest
+        ports:
+        - containerPort: 13100
+        imagePullPolicy: Always
